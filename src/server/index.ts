@@ -8,7 +8,7 @@ import {
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://202304-w7chwe-fede-otalvares-front.netlify.app/",
+  "https://202304-w7chwe-fede-otalvares-front.netlify.app",
 ];
 
 const corsOptions: cors.CorsOptions = {
