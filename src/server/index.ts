@@ -5,6 +5,7 @@ import {
   generalError,
   notFoundError,
 } from "./middlewares/errorMiddlewares/errorMiddlewares.js";
+import userRouter from "../routers/users/UsersRouter.js";
 
 const allowedOrigins = [
   "http://localhost:5173",
@@ -17,11 +18,15 @@ const corsOptions: cors.CorsOptions = {
 
 const app = express();
 
+app.disable("x-powered-by");
+
 app.use(cors(corsOptions));
 
 app.use(morgan("dev"));
 
 app.use(express.json());
+
+app.use("/user", userRouter);
 
 app.use(notFoundError);
 
